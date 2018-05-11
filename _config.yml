@@ -1,5 +1,5 @@
 # main text of home
-name: John Doe
+name: Albert F. Lee, Ph.D.
 bio: A Man who travels the world eating noodles
 
 # twitter summary info
@@ -50,11 +50,11 @@ github: mygithub
 medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: myemail@gmail.com
+email: leealbert52@gmail.com
 
 authors:
     johndoe:
-        name: John Doe
+        name: Albert F. Lee, Ph.D.
         bio: A Man who travels the world eating noodles
         external-image: false
         picture: assets/images/profile.jpg

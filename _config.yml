@@ -3,7 +3,7 @@ name: Albert F. Lee, Ph.D.
 bio: A Man who travels the world eating noodles
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: A blog about Statistics and Data Sciences
 
 # if it's an external image, update below for true
 # better with square images
@@ -22,7 +22,7 @@ url: https://koppl.in/indigo
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-119149576-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
@@ -34,15 +34,15 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
+#facebook: myfacebook
+twitter: @leeafmaster
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: mygithub
+github: leealbert52.github.io
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora

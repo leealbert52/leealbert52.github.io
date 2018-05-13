@@ -4,19 +4,32 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>This site is about Albert F. Lee, who in November 2017 was laid off by a
+health plan after 15 years of services with the company. While the laid off was
+not entirely unexpected, it threw him in a tailspin. This is his journey from a  
+statistician to become a data scientist.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>He received a Master of Arts in Applied Mathematics from the University of
+California Santa Barbara. He was interested in numerical analysis at the
+beginning. He learned first programming language in FORTRAN. He then applied
+to the Ph.D. program at Mathematics Department at the University of
+Illinois at Urbana-Champaign. He received a Master of Science degree in
+Mathematics instead.</p>
+
+<p>trying to find a job he studied actuarial examinations. It is in the study of
+the second exam of Statistics that he switched to the field of Statistics. He
+fell in love with Statistics and he received his doctorate degree in Statistics
+in the end. He learned SAS as a second programming language.<p>
+
+<p>He taught mathematics and statistics in a graduate school in Arizona for
+five years before he entered healthcare industry with Medicare and Medicaid.  
+Over the years he did not fully utilize his statistical training and expertise.
+He picked up the third programming language in R, not for necessity but for pure
+love.<p>
+
+<p>The laid off of 2017 finally prompted him to seek to fully utilize his Skills
+in Statistics and learn the fourth programming language Python.    
+<p>
 
 <h2>Skills</h2>
 

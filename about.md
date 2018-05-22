@@ -21,9 +21,9 @@ bringing a statistician's perspective into data science practice. So, here I am.
 <p>
 
 <p>I'll use this page to discuss different approaches taken by both
-statisticians and data scientists. While debate of which is a better programming
-language, R or Python, there is no debate for me. I love both and will continue
-to learn and exercise. <p>
+statisticians and data scientists in various situations. While debate of which
+is a better programming language, R or Python, there is no debate for me. I love
+both and will continue to learn and do projects using both languages. <p>
 
 <h2>Skills</h2>
 

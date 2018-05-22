@@ -7,22 +7,24 @@ layout: page
 <p>I am a statistician. And I have just recently completed a 12-weeks intensive
 Data Science training program to become a data scientist. I survived this very  
 challenging journey and learned so much about what data science is and what data
-scientists do.</p>
+scientists do. <p>
 
 <p>This site is all about what I have learned and what I'll be learning in data
 science in the years to come.  On the journey I learned and created a GitHub
-page to share my experience. </p>
+page to share my experience. <p>
 
 <p>What is there to share?  Not so much even as a statistician. Data science?
-No way. I hesitated and I'm not a outspoken person, either.</p>
+No way. I hesitated and I'm not a outspoken person, either. </p>
 
 <p>Then one day I realized that I do have something that is worthy of sharing -
 bringing a statistician's perspective into data science practice. So, here I am.
-</p>
+<p>
 
-<p>I'll use this page to contrast different approaches taken by both
-statisticians and data scientists. While debate of R and Python is never ending
-I love both programming language and will continue to learn and exercise</p>
+<p>I'll use this page to discuss different approaches taken by both
+statisticians and data scientists. While debate of which is a better programming
+language, R or Python, there is no debate for me. I love both and will continue
+to learn and exercise. <p>
+
 <h2>Skills</h2>
 
 <ul class="skill-list">

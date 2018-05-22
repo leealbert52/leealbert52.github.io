@@ -4,33 +4,25 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>This site is about Albert F. Lee, who in November 2017 was laid off by a
-health plan after 15 years of services with the company. While the laid off was
-not entirely unexpected, it threw him in a tailspin. This is his journey from a  
-statistician to become a data scientist.</p>
+<p>I am a statistician. And I have just recently completed a 12-weeks intensive
+Data Science training program to become a data scientist. I survived this very  
+challenging journey and learned so much about what data science is and what data
+scientists do.</p>
 
-<p>He received a Master of Arts in Applied Mathematics from the University of
-California Santa Barbara. He was interested in numerical analysis at the
-beginning. He learned first programming language in FORTRAN. He then applied
-to the Ph.D. program at Mathematics Department at the University of
-Illinois at Urbana-Champaign. He received a Master of Science degree in
-Mathematics instead.</p>
+<p>This site is all about what I have learned and what I'll be learning in data
+science in the years to come.  On the journey I learned and created a GitHub
+page to share my experience. </p>
 
-<p>trying to find a job he studied actuarial examinations. It is in the study of
-the second exam of Statistics that he switched to the field of Statistics. He
-fell in love with Statistics and he received his doctorate degree in Statistics
-in the end. He learned SAS as a second programming language.<p>
+<p>What is there to share?  Not so much even as a statistician. Data science?
+No way. I hesitated and I'm not a outspoken person, either.</p>
 
-<p>He taught mathematics and statistics in a graduate school in Arizona for
-five years before he entered healthcare industry with Medicare and Medicaid.  
-Over the years he did not fully utilize his statistical training and expertise.
-He picked up the third programming language in R, not for necessity but for pure
-love.<p>
+<p>Then one day I realized that I do have something that is worthy of sharing -
+bringing a statistician's perspective into data science practice. So, here I am.
+</p>
 
-<p>The laid off of 2017 finally prompted him to seek to fully utilize his Skills
-in Statistics and learn the fourth programming language Python.    
-<p>
-
+<p>I'll use this page to contrast different approaches taken by both
+statisticians and data scientists. While debate of R and Python is never ending
+I love both programming language and will continue to learn and exercise</p>
 <h2>Skills</h2>
 
 <ul class="skill-list">

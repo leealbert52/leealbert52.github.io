@@ -1,4 +1,19 @@
-Resampling and Over-sampling in Imbalanced Machine Learning
+---
+title: "Resampling and Over-sampling in Imbalanced Machine Learning"
+layout: post
+date: 2018-06-10
+headerImage: false
+tag:
+- markdown
+- resampling
+- over-sampling
+- Imbalanced machine Learning
+star: true
+category: blog
+author: Albert F. Lee, Ph.D.
+description: resampling and oversampling in imbalanced machine Learning
+---
+
 
 In this post I’ll explain the difference between resampling and oversampling in machine learning when the dataset is imbalanced.
 
@@ -19,4 +34,4 @@ The augmented sample is then used as the training dataset to train the classifie
 
 http://contrib.scikit-learn.org/imbalanced-learn
 
-https://lealbert52/github.io
+https://lealbert52.github.io

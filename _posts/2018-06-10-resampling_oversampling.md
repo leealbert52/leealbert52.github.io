@@ -14,7 +14,6 @@ author: Albert F. Lee, Ph.D.
 description: resampling and oversampling in imbalanced machine Learning
 ---
 
-
 In this post I’ll explain the difference between resampling and oversampling in machine learning when the dataset is imbalanced.
 
 Most machine learning algorithms in scikit-learn assumes that the dataset is balanced in a 2-class classification problem.  If a class, or the minority class is highly under-represented the majority class will dominate the learning process in the training, making it challenging to arrive at a descent classifier.

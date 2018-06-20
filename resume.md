@@ -1,10 +1,9 @@
 
 ---
-title: About
+title: Résumé
 layout: page
-date: 2018-06-15
+permalink: /resume/index.html
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
 
 This is a summary of my working experience, technical skills and subject matter expertise.  If you need a copy of my resume please email me directly so that I can forward you a copy.
 

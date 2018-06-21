@@ -46,6 +46,15 @@
             {% endif %}
         {% endif %}     
         
+        {% if site.healthcare == true %}
+            {% if page.title != "Healthcare" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/healthcare">Healthcare</a>
+                </li>
+            {% endif %}
+        {% endif %}     
+        
+        
         {% if site.resume == true %}
                 <li class="item">
                     <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Résumé</a>

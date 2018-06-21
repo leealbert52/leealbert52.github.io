@@ -1,8 +1,7 @@
 
 ---
-title: Résumé
+title: About
 layout: page
-permalink: /resume/index.html
 ---
 
 This is a summary of my working experience, technical skills and subject matter expertise.  If you need a copy of my resume please email me directly so that I can forward you a copy.

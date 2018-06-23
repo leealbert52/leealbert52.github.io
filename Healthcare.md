@@ -2,6 +2,7 @@
 title: Healthcare
 layout: page
 ---
+![Profile Image]({{ site.url }}/{{ site.picture }})
 
 Data Science Applications in Healthcare
 

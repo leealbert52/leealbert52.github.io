@@ -1,8 +1,6 @@
-
 ---
 title: About
 layout: page
-date: 2018-06-15
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 

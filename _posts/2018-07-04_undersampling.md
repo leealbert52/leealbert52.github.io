@@ -11,7 +11,7 @@ tag:
 star: true
 category: blog
 author: Albert F. Lee, Ph.D.
-description: Undersampling in Imbalanced Machine Learning
+description: "Undersampling in Imbalanced Machine Learning"
 ---
 
 Most machine learning algorithms in scikit-learn assume that, in a 2-class classification problem, the dataset is

@@ -1,16 +1,15 @@
-
 ---
 title: "Undersampling in Imbalanced Machine Learning"
 layout: post
 date: 2018-07-04
-category : blog
-headerimage: false
+headerImage: false
 tag:
 - oversampling
 - undersampling
-- imbalanced machine learning
+- Imbalanced Machine Learning
 - Index of Balanced Accuracy
 star: true
+category: blog
 author: Albert F. Lee, Ph.D.
 description: Undersampling in Imbalanced Machine Learning
 ---

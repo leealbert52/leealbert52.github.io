@@ -51,7 +51,7 @@ class rate with respect to other. (See Garcia, et al)
 The reduced samples (the balanced majority and minority training samples) are then used to train the classifier.
 In my project I use IBA, geometric mean and other metrics to compare the performance of a RandomForest classifier
 using both oversampling and undersampling approaches. It turns out that the undersampling approach is better than
-oversmapling approach using IBA, despite the fact that the dataset is relatively small.
+oversampling approach using IBA, despite the fact that the dataset is relatively small.
 
 http://contrib.scikit-learn.org/imbalanced-learn
 

@@ -1,18 +1,17 @@
-
 ---
 title: "Undersampling in Imbalanced Machine Learning"
 layout: post
 date: 2018-07-04
-category : blog
-headerimage: false
+headerImage: false
 tag:
 - oversampling
 - undersampling
-- imbalanced machine learning
+- Imbalanced Machine Learning
 - Index of Balanced Accuracy
 star: true
+category: blog
 author: Albert F. Lee, Ph.D.
-description: Undersampling in Imbalanced Machine Learning
+description: "Undersampling in Imbalanced Machine Learning"
 ---
 
 Most machine learning algorithms in scikit-learn assume that, in a 2-class classification problem, the dataset is
@@ -52,7 +51,7 @@ class rate with respect to other. (See Garcia, et al)
 The reduced samples (the balanced majority and minority training samples) are then used to train the classifier.
 In my project I use IBA, geometric mean and other metrics to compare the performance of a RandomForest classifier
 using both oversampling and undersampling approaches. It turns out that the undersampling approach is better than
-oversmapling approach using IBA, despite the fact that the dataset is relatively small.
+oversampling approach using IBA, despite the fact that the dataset is relatively small.
 
 http://contrib.scikit-learn.org/imbalanced-learn
 

@@ -1,9 +1,4 @@
-
----
-title: Healthcare
-layout: page    
----
-![Profile Image]({{ site.url }}/{{ https://cdn-images-1.medium.com/max/2000/1*xFNqxHNTuUa8czXh_Uoceg.jpeg }})
+**** Healthcare
 
 Data Science Applications in Healthcare
 

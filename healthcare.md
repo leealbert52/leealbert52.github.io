@@ -1,5 +1,6 @@
 ---
 title: Healthcare
+layout: page
 ---
 
 # Data Science Applications in Healthcare

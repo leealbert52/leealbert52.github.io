@@ -1,6 +1,8 @@
 ---
-title: Data Science Applications in Healthcare
+title: Healthcare
 ---
+
+# Data Science Applications in Healthcare
 
 Types of questions Data Science can help answer:
 

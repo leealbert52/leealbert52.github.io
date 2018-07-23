@@ -824,18 +824,8 @@ sns.pairplot(result, hue='failure')
 
 
 
-<img src="/_posts/output_19_1.png" width="800" />
-<img src="output_19_1.png" width="800" />
+![png](output_19_1.png)
 
-
-
-sdfdsfsfadaf
-
-
-<img align="left" src="/_posts/output_19_1.png" width="200" > ![](output_19_1.png)
-
-![png](https://github.com/leealbert52/leealbert52.github.io/tree/master/_posts/output_19_1.png)
-<img src="https://github.com/leealbert52/leealbert52.github.io/tree/master/_posts/output_19_1.png">
 
 # Logistic regression consideration
 

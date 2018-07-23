@@ -42,7 +42,7 @@ import seaborn as sns; sns.set()
 
 # Introduction
 
-This is a Project-based Learning (PBL) from the DevMasters - Mastering Applied Data Science program.  We were given a dataset that has 12 columns and no description of each, except the dates, device ID and a target variable, failure, which is binary.  Per our instructor, it is a common practice for employers to use such datasets to test prospective candidates.  The candidate is to build a predictive model within a short time and demonstrate his/her ability of solving the problem. 
+This is a Project-based Learning (PBL) from the DevMasters - Mastering Applied Data Science program.  We were given a dataset that has 12 columns and no description of each, except the dates, device ID and a target variable, failure, which is binary.  Per our instructor, it is a common practice for employers to use such datasets to test prospective candidates.  The candidate is to build a predictive model within a short time and demonstrate his/her ability of solving the problem.
 
 # Business Objective
 
@@ -56,7 +56,7 @@ Below I go through some exploratory data analysis, and get to modeling stage rat
 
 # Exploratory Data Analysis
 
-An exploratory data analysis reveals that 
+An exploratory data analysis reveals that
 1. All attributes are of integer data type;
 2. Attribute7 and attribute8 are exactly the same. Attribute8 is dropped;
 3. Of the 124,494 records for the year, there were only 106 failures. The date is when a device is visited. Either groupby function or pivot table function can be used to aggregate to the device level;
@@ -129,7 +129,7 @@ df['failure'].value_counts(dropna=False)
 
 
 ```python
-#aggregate by device, the number of dates a certain device is visited for maintenance 
+#aggregate by device, the number of dates a certain device is visited for maintenance
 date_cnt = df.groupby('device')['date'].count()
 ```
 
@@ -137,7 +137,7 @@ date_cnt = df.groupby('device')['date'].count()
 ```python
 #groupby device numerical variables - either use max or sum
 df = df.groupby('device').agg({'failure' : 'sum', 'attribute6' : 'sum',
-                               'attribute1':'max', 'attribute9': 'max', 
+                               'attribute1':'max', 'attribute9': 'max',
                                'attribute2':'max', 'attribute3': 'max', 'attribute4' : 'max',
                                'attribute5':'max', 'attribute7': 'max'})
 ```
@@ -883,7 +883,7 @@ ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot
 
 
 ```python
-#distribution plot on the transformed attribute4 
+#distribution plot on the transformed attribute4
 sns.distplot(result['attribute4'],fit=norm)
 fig = plt.figure()
 res=stats.probplot(result['attribute4'], plot=plt)
@@ -968,7 +968,7 @@ Synthetic Minority oversampling technique SMOTE and a Linear Support Vector Clas
 
 
 ```python
-#only attribute1, attribute2, attribute4, attribute5, attribute6, and attribute7 are used in the model 
+#only attribute1, attribute2, attribute4, attribute5, attribute6, and attribute7 are used in the model
 X = result.drop(['failure','attribute3','attribute9'], axis=1)
 
 y = result['failure']
@@ -1072,9 +1072,9 @@ y_test.value_counts()
 
 A new simple index called Dominance is proposed for evaluating the relationship between the TPrate and TNrate, which is defined as Dominance = TPrate - TNrate.  And -1 <= Dominance <= +1
 
-the Dominance is to inform which is the dominant class and how significance is its dominance relationship.  In practice, the Dominance can be interpreted as an indicator of how balanced the TPrate and the TNrate are 
+the Dominance is to inform which is the dominant class and how significance is its dominance relationship.  In practice, the Dominance can be interpreted as an indicator of how balanced the TPrate and the TNrate are
 
-alpha here is a weighting factor on the value of Dominance.  0 <= alpha <= 1.  Significant effects are obtained for alpha <= 0.5 and the default is 0.1. 
+alpha here is a weighting factor on the value of Dominance.  0 <= alpha <= 1.  Significant effects are obtained for alpha <= 0.5 and the default is 0.1.
 
 
 ```python
@@ -1145,22 +1145,22 @@ print(classification_report_imbalanced(y_test, y_pred_bal))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-    
+
               0       0.96      0.92      0.62      0.94      0.76      0.59       213
               1       0.45      0.62      0.92      0.52      0.76      0.56        21
-    
+
     avg / total       0.91      0.90      0.65      0.90      0.76      0.59       234
-    
 
 
-## Note that 
 
-1. pre is precision, which is a measure of result relevancy; 
-2. rec is recall, which is the same as sensitivity. Recall is a measure of how many truly relevant results are returned; 
+## Note that
+
+1. pre is precision, which is a measure of result relevancy;
+2. rec is recall, which is the same as sensitivity. Recall is a measure of how many truly relevant results are returned;
 3. spe is specificity;
 4. f1 is the harmonic average of the precision and recall;
-5. geo is the geometric mean of specificity and sensitivity; 
-6. iba is the index of imbalanced accuracy; 
+5. geo is the geometric mean of specificity and sensitivity;
+6. iba is the index of imbalanced accuracy;
 
 Again we should pay attention to the second row of 1.
 
@@ -1236,7 +1236,7 @@ rf_cm
 
 
 ```python
-#note that I am using accuracy as the scoring methodolgy here.  There are other options 
+#note that I am using accuracy as the scoring methodolgy here.  There are other options
 rf_cv_score = cross_val_score(a, X_res, y_res, cv=10, scoring='accuracy')
 ```
 
@@ -1312,7 +1312,7 @@ accuracy_score(y_test, rf_test_pred)
 
 
 
-## Note 
+## Note
 The accuracy score of this classifier is high: 224 out of 234, or 95.7%; however, this classifier only predicts 14 failures out of 21, or 66.7% on the test data
 
 
@@ -1323,16 +1323,16 @@ print(classification_report_imbalanced(y_test,rf_test_pred))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-    
+
               0       0.97      0.99      0.67      0.98      0.81      0.68       213
               1       0.82      0.67      0.99      0.74      0.81      0.64        21
-    
+
     avg / total       0.95      0.96      0.70      0.96      0.81      0.67       234
-    
 
 
-## Note 
-When comapred to In[38], the RandomForest classifier has higher IBA (0.64 vs 0.56) and geometric mean (0.81 vs 0.76) than those of LinearSVC classifier using oversampling approach 
+
+## Note
+When comapred to In[38], the RandomForest classifier has higher IBA (0.64 vs 0.56) and geometric mean (0.81 vs 0.76) than those of LinearSVC classifier using oversampling approach
 
 ## Adaptive Synthetic oversampling approach and a LinearSVC
 
@@ -1447,8 +1447,8 @@ lsvc_test_cm
 
 
 
-## Note 
-This LinearSVC classifier with ADASYN oversampling approach perform badly with test data - only predicts 12 out 21 failures or 57.1% 
+## Note
+This LinearSVC classifier with ADASYN oversampling approach perform badly with test data - only predicts 12 out 21 failures or 57.1%
 
 
 ```python
@@ -1456,12 +1456,12 @@ print(classification_report_imbalanced(y_test,lsvc_test_pred))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-    
+
               0       0.96      0.92      0.62      0.94      0.75      0.58       213
               1       0.42      0.62      0.92      0.50      0.75      0.55        21
-    
+
     avg / total       0.91      0.89      0.65      0.90      0.75      0.58       234
-    
+
 
 
 
@@ -1476,16 +1476,16 @@ accuracy_score(y_test, lsvc_test_pred)
 
 
 
-## Note 
+## Note
 The results are similar to that in [38]
 
 # Undersampling
 
-# Undersampling approach and a RandomForest Classifier 
+# Undersampling approach and a RandomForest Classifier
 
 
 ```python
-from imblearn.under_sampling import RandomUnderSampler 
+from imblearn.under_sampling import RandomUnderSampler
 
 rus = RandomUnderSampler(random_state=42)
 
@@ -1542,7 +1542,7 @@ und_rf_cm
 
 
 
-## Note 
+## Note
 This RandomForest classifier predicts perfectly on the training dataset
 
 
@@ -1622,7 +1622,7 @@ accuracy_score(y_test, und_rf_test_pred)
 
 
 
-## Undersampling & a RandomForest Classifier 
+## Undersampling & a RandomForest Classifier
 
 
 ```python
@@ -1630,12 +1630,12 @@ print(classification_report_imbalanced(y_test,und_rf_test_pred))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-    
+
               0       0.98      0.88      0.81      0.93      0.85      0.72       213
               1       0.40      0.81      0.88      0.54      0.85      0.71        21
-    
+
     avg / total       0.93      0.88      0.82      0.89      0.85      0.72       234
-    
+
 
 
 ## Oversampling & a RandomForest Classifier
@@ -1646,12 +1646,12 @@ print(classification_report_imbalanced(y_test,rf_test_pred))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-    
+
               0       0.97      0.99      0.67      0.98      0.81      0.68       213
               1       0.82      0.67      0.99      0.74      0.81      0.64        21
-    
+
     avg / total       0.95      0.96      0.70      0.96      0.81      0.67       234
-    
+
 
 
 # Conclusion

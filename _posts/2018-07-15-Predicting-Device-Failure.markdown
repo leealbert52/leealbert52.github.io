@@ -1,4 +1,3 @@
-
 ---
 title: "Predicting Device Failure"
 layout: post

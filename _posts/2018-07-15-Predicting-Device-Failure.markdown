@@ -824,8 +824,8 @@ sns.pairplot(result, hue='failure')
 
 
 
-<img src="output_19_1.png" width="800" /> ![](output_19_1.png)
-<img align="left" src="output_19_1.png" width="200" > ![](output_19_1.png)
+<img src="/_posts/output_19_1.png" width="800" /> ![](output_19_1.png)
+<img align="left" src="/_posts/output_19_1.png" width="200" > ![](output_19_1.png)
 
 ![png](https://github.com/leealbert52/leealbert52.github.io/tree/master/_posts/output_19_1.png)
 <img src="https://github.com/leealbert52/leealbert52.github.io/tree/master/_posts/output_19_1.png">

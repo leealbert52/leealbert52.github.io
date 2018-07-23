@@ -826,7 +826,7 @@ sns.pairplot(result, hue='failure')
 
 
 ![png](/_posts/output_19_1.png)
-
+<img src="output_19_1.png">
 
 # Logistic regression consideration
 

@@ -10,7 +10,7 @@ tag:
 - Imbalanced machine Learning
 star: true
 category: blog
-author: Albert F. Lee, Ph.D.
+author: leealbert
 description: resampling and oversampling in imbalanced machine Learning
 ---
 

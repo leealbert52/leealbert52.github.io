@@ -10,7 +10,7 @@ tag:
 - Index of Balanced Accuracy
 star: true
 category: blog
-author: Albert F. Lee, Ph.D.
+author: leealbert
 description: "Undersampling in Imbalanced Machine Learning"
 ---
 

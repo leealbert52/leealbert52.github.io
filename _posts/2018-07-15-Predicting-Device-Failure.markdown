@@ -8,7 +8,7 @@ tag:
 - oversampling
 - undersampling
 - Index of Balanced Accuracy
-headerImage: true
+headerImage: false
 projects: true
 hidden: true
 description: "Project-based Learning in the DevMasters - Mastering Applied Data Science"

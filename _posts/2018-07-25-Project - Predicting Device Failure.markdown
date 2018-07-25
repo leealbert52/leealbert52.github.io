@@ -835,7 +835,7 @@ display(Image(filename='output_19_1.png', embed=True))
 ```
 
 
-![png](output_20_0.png)
+![png](output_19_1.png)
 
 
 # Logistic regression consideration

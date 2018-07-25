@@ -1,16 +1,15 @@
 ---
 title: "Predicting Device Failure"
 layout: post
-date: 2018-07-15
+date: 2018-07-25 22:10
 tag:
 - imbalanced machine learning
 - oversampling
 - undersampling
 - Index of Balanced Accuracy
-headerImage: true
+headerImage: false
 projects: true
 hidden: true
-blog pagination
 description: "Project-based Learning in the DevMasters - Mastering Applied Data Science"
 category: project
 author: leealbert

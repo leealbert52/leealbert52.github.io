@@ -821,7 +821,7 @@ sns.pairplot(result, hue='failure') #due to display issue of Indigo theme. the i
 
 
 
-![png](output_19_1.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_19_1.png)
 
 xxxxx
 <div class="center"><img src="https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_19_1.png" /></div>

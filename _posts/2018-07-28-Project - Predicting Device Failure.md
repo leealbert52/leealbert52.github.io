@@ -823,7 +823,9 @@ sns.pairplot(result, hue='failure') #due to display issue of Indigo theme. the i
 
 ![png](output_19_1.png)
 
-<div class="center"><img src="output_19_1.png" /></div>
+xxxxx
+<div class="center"><img src="https://github.com/leealbert52/leealbert52.github.io/blob/master/_posts/output_19_1.png" /></div>
+xxxxx
 
 ```python
 from IPython.display import display, HTML

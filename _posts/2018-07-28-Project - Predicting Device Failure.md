@@ -850,23 +850,10 @@ res=stats.probplot(result['attribute4'], plot=plt)
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_22_1.png)
 
 
-
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_22_2.png)
 
 
-
-```python
-display(Image(filename='output_21_0.png', embed=True))
-```
-
-
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_23_0.png)
-
-
-
-```python
-display(Image(filename='output_21_1.png', embed=True))
-```
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_24_0.png)
@@ -883,12 +870,6 @@ ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_25_1.png)
-
-
-
-```python
-display(Image(filename='output_22_0.png', embed=True))
-```
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_26_0.png)
@@ -910,11 +891,6 @@ ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_29_0.png)
 
-
-
-```python
-display(Image(filename='output_25_0.png', embed=True))
-```
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_30_0.png)
@@ -941,18 +917,8 @@ res=stats.probplot(result['attribute4'], plot=plt)
 
 
 
-```python
-display(Image(filename='output_26_0.png', embed=True))
-```
-
-
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_32_0.png)
 
-
-
-```python
-display(Image(filename='output_26_1.png', embed=True))
-```
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_33_0.png)
@@ -1010,12 +976,6 @@ sns.jointplot('attribute1', 'attribute6', data=result)
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_40_2.png)
 
 
-
-```python
-display(Image(filename='output_33_1.png', embed=True))
-```
-
-
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_41_0.png)
 
 
@@ -1040,12 +1000,6 @@ sns.jointplot('attribute4', 'attribute7', data=result)
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_42_2.png)
-
-
-
-```python
-display(Image(filename='output_34_1.png', embed=True))
-```
 
 
 ![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_43_0.png)

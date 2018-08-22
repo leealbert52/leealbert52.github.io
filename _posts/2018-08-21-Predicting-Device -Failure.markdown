@@ -1,7 +1,7 @@
 ---
 title: "Predicting Device Failure"
 layout: post
-date: 2018-08-21
+date: 2018-08-21 22:10
 tag:
 - imbalanced machine learning
 - oversampling

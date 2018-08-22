@@ -1,7 +1,7 @@
 ---
 title: "Predicting Device Failure"
 layout: post
-date: 2018-08-21 22:10
+date: 2018-08-21
 tag:
 - imbalanced machine learning
 - oversampling
@@ -10,7 +10,6 @@ tag:
 headerImage: true
 projects: true
 hidden: true
-blog pagination
 description: "Project-based Learning in the DevMasters - Mastering Applied Data Science"
 category: project
 author: leealbert

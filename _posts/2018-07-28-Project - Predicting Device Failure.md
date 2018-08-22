@@ -1,23 +1,20 @@
-
 ---
 title: "Predicting Device Failure"
 layout: post
-date: 2018-07-15
+date: 2018-07-28 22:10
 tag:
 - imbalanced machine learning
 - oversampling
 - undersampling
 - Index of Balanced Accuracy
-headerImage: true
+headerImage: false
 projects: true
 hidden: true
-blog pagination
 description: "Project-based Learning in the DevMasters - Mastering Applied Data Science"
 category: project
 author: leealbert
 externalLink: false
 ---
-
 
 ```python
 #import libraries
@@ -32,17 +29,14 @@ from sklearn.cross_validation import train_test_split, KFold
 from sklearn.metrics import confusion_matrix, accuracy_score
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
+from IPython.display import Image, display
 
 %matplotlib inline
 ```
 
-    /Users/my_mac/anaconda3/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-      "This module will be removed in 0.20.", DeprecationWarning)
-
-
 # Introduction
 
-This is a Project-based Learning (PBL) from the DevMasters - Mastering Applied Data Science program.  We were given a dataset that has 12 columns and no description of each, except the dates, device ID and a target variable, failure, which is binary.  Per our instructor, it is a common practice for employers to use such datasets to test prospective candidates.  The candidate is to build a predictive model within a short time and demonstrate his/her ability of solving the problem.
+This is a Project-based Learning (PBL) from the DevMasters - Mastering Applied Data Science program.  We were given a dataset that has 12 columns and no description of each, except the dates, device ID and a target variable, failure, which is binary.  Per our instructor, it is a common practice for employers to use such datasets to test prospective candidates.  The candidate is to build a predictive model within a short time and demonstrate his/her ability of solving the problem. 
 
 # Business Objective
 
@@ -56,7 +50,7 @@ Below I go through some exploratory data analysis, and get to modeling stage rat
 
 # Exploratory Data Analysis
 
-An exploratory data analysis reveals that
+An exploratory data analysis reveals that 
 1. All attributes are of integer data type;
 2. Attribute7 and attribute8 are exactly the same. Attribute8 is dropped;
 3. Of the 124,494 records for the year, there were only 106 failures. The date is when a device is visited. Either groupby function or pivot table function can be used to aggregate to the device level;
@@ -129,7 +123,7 @@ df['failure'].value_counts(dropna=False)
 
 
 ```python
-#aggregate by device, the number of dates a certain device is visited for maintenance
+#aggregate by device, the number of dates a certain device is visited for maintenance 
 date_cnt = df.groupby('device')['date'].count()
 ```
 
@@ -137,7 +131,7 @@ date_cnt = df.groupby('device')['date'].count()
 ```python
 #groupby device numerical variables - either use max or sum
 df = df.groupby('device').agg({'failure' : 'sum', 'attribute6' : 'sum',
-                               'attribute1':'max', 'attribute9': 'max',
+                               'attribute1':'max', 'attribute9': 'max', 
                                'attribute2':'max', 'attribute3': 'max', 'attribute4' : 'max',
                                'attribute5':'max', 'attribute7': 'max'})
 ```
@@ -816,18 +810,19 @@ result.corr()
 
 ```python
 #visualization of correlations using seaborn pairplot
-sns.pairplot(result, hue='failure')
+sns.pairplot(result, hue='failure') #due to display issue of Indigo theme. the image is display manually
 ```
 
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x10cfca9e8>
+    <seaborn.axisgrid.PairGrid at 0x1a26ddbe10>
 
 
 
 
-![png](output_19_1.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_19_1.png)
+
 
 
 # Logistic regression consideration
@@ -847,12 +842,21 @@ fig = plt.figure()
 res=stats.probplot(result['attribute4'], plot=plt)
 ```
 
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
-![png](output_21_0.png)
 
 
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_22_1.png)
 
-![png](output_21_1.png)
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_22_2.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_23_0.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_24_0.png)
 
 
 
@@ -860,8 +864,15 @@ res=stats.probplot(result['attribute4'], plot=plt)
 ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot=500, y_jitter=.03)
 ```
 
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/statsmodels/genmod/families/family.py:880: RuntimeWarning: invalid value encountered in true_divide
+      n_endog_mu = self._clean((1. - endog) / (1. - mu))
 
-![png](output_22_0.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_25_1.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_26_0.png)
 
 
 ## The "S"-shape displayed here indicates that attribute4 is a good candidate to classify failure of a device.  I also tried a log(1 + attribute4) transformation to see if it is normal-like  
@@ -878,23 +889,39 @@ ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot
 ```
 
 
-![png](output_25_0.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_29_0.png)
+
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_30_0.png)
 
 
 
 ```python
-#distribution plot on the transformed attribute4
+#distribution plot on the transformed attribute4 
 sns.distplot(result['attribute4'],fit=norm)
 fig = plt.figure()
 res=stats.probplot(result['attribute4'], plot=plt)
 ```
 
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
-![png](output_26_0.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_31_1.png)
 
 
 
-![png](output_26_1.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_31_2.png)
+
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_32_0.png)
+
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_33_0.png)
 
 
 One can repeat the exercise for Attibute7
@@ -932,15 +959,24 @@ result['attribute7'] = np.log1p(result['attribute7'])
 sns.jointplot('attribute1', 'attribute6', data=result)
 ```
 
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
 
-    <seaborn.axisgrid.JointGrid at 0x112869da0>
+
+
+    <seaborn.axisgrid.JointGrid at 0x1a2c189a90>
 
 
 
 
-![png](output_33_1.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_40_2.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_41_0.png)
 
 
 
@@ -949,15 +985,24 @@ sns.jointplot('attribute1', 'attribute6', data=result)
 sns.jointplot('attribute4', 'attribute7', data=result)
 ```
 
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
+    /Users/leicao/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+      warnings.warn("The 'normed' kwarg is deprecated, and has been "
 
 
 
-    <seaborn.axisgrid.JointGrid at 0x11a790b70>
+
+
+    <seaborn.axisgrid.JointGrid at 0x1a2c189550>
 
 
 
 
-![png](output_34_1.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_42_2.png)
+
+
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_43_0.png)
 
 
 # Modeling
@@ -968,7 +1013,7 @@ Synthetic Minority oversampling technique SMOTE and a Linear Support Vector Clas
 
 
 ```python
-#only attribute1, attribute2, attribute4, attribute5, attribute6, and attribute7 are used in the model
+#only attribute1, attribute2, attribute4, attribute5, attribute6, and attribute7 are used in the model 
 X = result.drop(['failure','attribute3','attribute9'], axis=1)
 
 y = result['failure']
@@ -1072,9 +1117,9 @@ y_test.value_counts()
 
 A new simple index called Dominance is proposed for evaluating the relationship between the TPrate and TNrate, which is defined as Dominance = TPrate - TNrate.  And -1 <= Dominance <= +1
 
-the Dominance is to inform which is the dominant class and how significance is its dominance relationship.  In practice, the Dominance can be interpreted as an indicator of how balanced the TPrate and the TNrate are
+the Dominance is to inform which is the dominant class and how significance is its dominance relationship.  In practice, the Dominance can be interpreted as an indicator of how balanced the TPrate and the TNrate are 
 
-alpha here is a weighting factor on the value of Dominance.  0 <= alpha <= 1.  Significant effects are obtained for alpha <= 0.5 and the default is 0.1.
+alpha here is a weighting factor on the value of Dominance.  0 <= alpha <= 1.  Significant effects are obtained for alpha <= 0.5 and the default is 0.1. 
 
 
 ```python
@@ -1145,22 +1190,22 @@ print(classification_report_imbalanced(y_test, y_pred_bal))
 ```
 
                        pre       rec       spe        f1       geo       iba       sup
-
+    
               0       0.96      0.92      0.62      0.94      0.76      0.59       213
               1       0.45      0.62      0.92      0.52      0.76      0.56        21
-
+    
     avg / total       0.91      0.90      0.65      0.90      0.76      0.59       234
+    
 
 
+## Note that 
 
-## Note that
-
-1. pre is precision, which is a measure of result relevancy;
-2. rec is recall, which is the same as sensitivity. Recall is a measure of how many truly relevant results are returned;
+1. pre is precision, which is a measure of result relevancy; 
+2. rec is recall, which is the same as sensitivity. Recall is a measure of how many truly relevant results are returned; 
 3. spe is specificity;
 4. f1 is the harmonic average of the precision and recall;
-5. geo is the geometric mean of specificity and sensitivity;
-6. iba is the index of imbalanced accuracy;
+5. geo is the geometric mean of specificity and sensitivity; 
+6. iba is the index of imbalanced accuracy; 
 
 Again we should pay attention to the second row of 1.
 
@@ -1236,9 +1281,150 @@ rf_cm
 
 
 ```python
-#note that I am using accuracy as the scoring methodolgy here.  There are other options
+#note that I am using accuracy as the scoring methodolgy here.  There are other options 
 rf_cv_score = cross_val_score(a, X_res, y_res, cv=10, scoring='accuracy')
 ```
+
+
+    ---------------------------------------------------------------------------
+
+    KeyboardInterrupt                         Traceback (most recent call last)
+
+    <ipython-input-92-6331789fd88c> in <module>()
+          1 #note that I am using accuracy as the scoring methodolgy here.  There are other options
+    ----> 2 rf_cv_score = cross_val_score(a, X_res, y_res, cv=10, scoring='accuracy')
+    
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in cross_val_score(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch)
+        340                                 n_jobs=n_jobs, verbose=verbose,
+        341                                 fit_params=fit_params,
+    --> 342                                 pre_dispatch=pre_dispatch)
+        343     return cv_results['test_score']
+        344 
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in cross_validate(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch, return_train_score)
+        204             fit_params, return_train_score=return_train_score,
+        205             return_times=True)
+    --> 206         for train, test in cv.split(X, y, groups))
+        207 
+        208     if return_train_score:
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self, iterable)
+        777             # was dispatched. In particular this covers the edge
+        778             # case of Parallel used with an exhausted iterator.
+    --> 779             while self.dispatch_one_batch(iterator):
+        780                 self._iterating = True
+        781             else:
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in dispatch_one_batch(self, iterator)
+        623                 return False
+        624             else:
+    --> 625                 self._dispatch(tasks)
+        626                 return True
+        627 
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in _dispatch(self, batch)
+        586         dispatch_timestamp = time.time()
+        587         cb = BatchCompletionCallBack(dispatch_timestamp, len(batch), self)
+    --> 588         job = self._backend.apply_async(batch, callback=cb)
+        589         self._jobs.append(job)
+        590 
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py in apply_async(self, func, callback)
+        109     def apply_async(self, func, callback=None):
+        110         """Schedule a func to be run"""
+    --> 111         result = ImmediateResult(func)
+        112         if callback:
+        113             callback(result)
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py in __init__(self, batch)
+        330         # Don't delay the application, to avoid keeping the input
+        331         # arguments in memory
+    --> 332         self.results = batch()
+        333 
+        334     def get(self):
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self)
+        129 
+        130     def __call__(self):
+    --> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        132 
+        133     def __len__(self):
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0)
+        129 
+        130     def __call__(self):
+    --> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        132 
+        133     def __len__(self):
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, return_train_score, return_parameters, return_n_test_samples, return_times, error_score)
+        456             estimator.fit(X_train, **fit_params)
+        457         else:
+    --> 458             estimator.fit(X_train, y_train, **fit_params)
+        459 
+        460     except Exception as e:
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/forest.py in fit(self, X, y, sample_weight)
+        314             for i in range(n_more_estimators):
+        315                 tree = self._make_estimator(append=False,
+    --> 316                                             random_state=random_state)
+        317                 trees.append(tree)
+        318 
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/base.py in _make_estimator(self, append, random_state)
+        128 
+        129         if random_state is not None:
+    --> 130             _set_random_states(estimator, random_state)
+        131 
+        132         if append:
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/base.py in _set_random_states(estimator, random_state)
+         50     random_state = check_random_state(random_state)
+         51     to_set = {}
+    ---> 52     for key in sorted(estimator.get_params(deep=True)):
+         53         if key == 'random_state' or key.endswith('__random_state'):
+         54             to_set[key] = random_state.randint(MAX_RAND_SEED)
+
+
+    ~/anaconda3/lib/python3.6/site-packages/sklearn/base.py in get_params(self, deep)
+        231             # This is set in utils/__init__.py but it gets overwritten
+        232             # when running under python3 somehow.
+    --> 233             warnings.simplefilter("always", DeprecationWarning)
+        234             try:
+        235                 with warnings.catch_warnings(record=True) as w:
+
+
+    ~/anaconda3/lib/python3.6/warnings.py in simplefilter(action, category, lineno, append)
+        155     assert isinstance(lineno, int) and lineno >= 0, \
+        156            "lineno must be an int >= 0"
+    --> 157     _add_filter(action, None, category, None, lineno, append=append)
+        158 
+        159 def _add_filter(*item, append):
+
+
+    ~/anaconda3/lib/python3.6/warnings.py in _add_filter(append, *item)
+        157     _add_filter(action, None, category, None, lineno, append=append)
+        158 
+    --> 159 def _add_filter(*item, append):
+        160     # Remove possible duplicate filters, so new one will be placed
+        161     # in correct place. If append=True and duplicate exists, do nothing.
+
+
+    KeyboardInterrupt: 
+
 
 
 ```python
@@ -1246,36 +1432,14 @@ rf_cv_score
 ```
 
 
-
-
-    array([0.84705882, 0.97647059, 0.97647059, 1.        , 0.97647059,
-           0.97647059, 0.97647059, 0.97647059, 0.98235294, 0.98809524])
-
-
-
-
 ```python
 rf_cv_score.mean()
 ```
 
 
-
-
-    0.9676330532212883
-
-
-
-
 ```python
 accuracy_score(y_res, rf_res_pred)
 ```
-
-
-
-
-    1.0
-
-
 
 
 ```python
@@ -1293,26 +1457,11 @@ rf_test_cm
 ```
 
 
-
-
-    array([[210,   3],
-           [  7,  14]])
-
-
-
-
 ```python
 accuracy_score(y_test, rf_test_pred)
 ```
 
-
-
-
-    0.9572649572649573
-
-
-
-## Note
+## Note 
 The accuracy score of this classifier is high: 224 out of 234, or 95.7%; however, this classifier only predicts 14 failures out of 21, or 66.7% on the test data
 
 
@@ -1322,17 +1471,8 @@ from imblearn.metrics import classification_report_imbalanced
 print(classification_report_imbalanced(y_test,rf_test_pred))
 ```
 
-                       pre       rec       spe        f1       geo       iba       sup
-
-              0       0.97      0.99      0.67      0.98      0.81      0.68       213
-              1       0.82      0.67      0.99      0.74      0.81      0.64        21
-
-    avg / total       0.95      0.96      0.70      0.96      0.81      0.67       234
-
-
-
-## Note
-When comapred to In[38], the RandomForest classifier has higher IBA (0.64 vs 0.56) and geometric mean (0.81 vs 0.76) than those of LinearSVC classifier using oversampling approach
+## Note 
+When comapred to In[38], the RandomForest classifier has higher IBA (0.64 vs 0.56) and geometric mean (0.81 vs 0.76) than those of LinearSVC classifier using oversampling approach 
 
 ## Adaptive Synthetic oversampling approach and a LinearSVC
 
@@ -1344,20 +1484,10 @@ print(sorted(Counter(y_resampled).items()))
 clf_adasyn = LinearSVC().fit(X_resampled, y_resampled)
 ```
 
-    [(0, 849), (1, 847)]
-
-
 
 ```python
 clf_adasyn.score(X_resampled, y_resampled)
 ```
-
-
-
-
-    0.7193396226415094
-
-
 
 
 ```python
@@ -1375,14 +1505,6 @@ lsvc_cm
 ```
 
 
-
-
-    array([[737, 112],
-           [364, 483]])
-
-
-
-
 ```python
 lsvc_cv_score = cross_val_score(clf_adasyn, X_resampled, y_resampled, cv=10, scoring='accuracy')
 ```
@@ -1393,36 +1515,14 @@ lsvc_cv_score
 ```
 
 
-
-
-    array([0.72352941, 0.75882353, 0.75882353, 0.57058824, 0.62941176,
-           0.55294118, 0.62352941, 0.71005917, 0.66863905, 0.75      ])
-
-
-
-
 ```python
 lsvc_cv_score.mean()
 ```
 
 
-
-
-    0.67463452836756
-
-
-
-
 ```python
 accuracy_score(y_resampled, lsvc_res_pred)
 ```
-
-
-
-
-    0.7193396226415094
-
-
 
 
 ```python
@@ -1439,53 +1539,29 @@ lsvc_test_cm = confusion_matrix(y_test, lsvc_test_pred)
 lsvc_test_cm
 ```
 
-
-
-
-    array([[195,  18],
-           [  8,  13]])
-
-
-
-## Note
-This LinearSVC classifier with ADASYN oversampling approach perform badly with test data - only predicts 12 out 21 failures or 57.1%
+## Note 
+This LinearSVC classifier with ADASYN oversampling approach perform badly with test data - only predicts 12 out 21 failures or 57.1% 
 
 
 ```python
 print(classification_report_imbalanced(y_test,lsvc_test_pred))
 ```
 
-                       pre       rec       spe        f1       geo       iba       sup
-
-              0       0.96      0.92      0.62      0.94      0.75      0.58       213
-              1       0.42      0.62      0.92      0.50      0.75      0.55        21
-
-    avg / total       0.91      0.89      0.65      0.90      0.75      0.58       234
-
-
-
 
 ```python
 accuracy_score(y_test, lsvc_test_pred)
 ```
 
-
-
-
-    0.8888888888888888
-
-
-
-## Note
+## Note 
 The results are similar to that in [38]
 
 # Undersampling
 
-# Undersampling approach and a RandomForest Classifier
+# Undersampling approach and a RandomForest Classifier 
 
 
 ```python
-from imblearn.under_sampling import RandomUnderSampler
+from imblearn.under_sampling import RandomUnderSampler 
 
 rus = RandomUnderSampler(random_state=42)
 
@@ -1494,9 +1570,6 @@ X_und, y_und = rus.fit_sample(X_train, y_train)
 print('Resampled dataset shape {}'.format(Counter(y_und)))
 
 ```
-
-    Resampled dataset shape Counter({0: 85, 1: 85})
-
 
 ## Note that the sample sizes are 85 for both majority and minority classess - undersampling
 
@@ -1513,13 +1586,6 @@ und_rf.score(X_und, y_und)
 ```
 
 
-
-
-    1.0
-
-
-
-
 ```python
 und_rf_pred=und_rf.predict(X_und)
 ```
@@ -1534,15 +1600,7 @@ und_rf_cm = confusion_matrix(y_und, und_rf_pred)
 und_rf_cm
 ```
 
-
-
-
-    array([[85,  0],
-           [ 0, 85]])
-
-
-
-## Note
+## Note 
 This RandomForest classifier predicts perfectly on the training dataset
 
 
@@ -1556,36 +1614,14 @@ und_rf_cv_score
 ```
 
 
-
-
-    array([0.94444444, 0.88888889, 0.88888889, 1.        , 0.77777778,
-           1.        , 0.8125    , 0.9375    , 0.9375    , 0.9375    ])
-
-
-
-
 ```python
 und_rf_cv_score.mean()
 ```
 
 
-
-
-    0.9125
-
-
-
-
 ```python
 accuracy_score(y_und, und_rf_pred)
 ```
-
-
-
-
-    1.0
-
-
 
 
 ```python
@@ -1603,40 +1639,16 @@ und_rf_test_cm
 ```
 
 
-
-
-    array([[188,  25],
-           [  4,  17]])
-
-
-
-
 ```python
 accuracy_score(y_test, und_rf_test_pred)
 ```
 
-
-
-
-    0.8760683760683761
-
-
-
-## Undersampling & a RandomForest Classifier
+## Undersampling & a RandomForest Classifier 
 
 
 ```python
 print(classification_report_imbalanced(y_test,und_rf_test_pred))
 ```
-
-                       pre       rec       spe        f1       geo       iba       sup
-
-              0       0.98      0.88      0.81      0.93      0.85      0.72       213
-              1       0.40      0.81      0.88      0.54      0.85      0.71        21
-
-    avg / total       0.93      0.88      0.82      0.89      0.85      0.72       234
-
-
 
 ## Oversampling & a RandomForest Classifier
 
@@ -1644,15 +1656,6 @@ print(classification_report_imbalanced(y_test,und_rf_test_pred))
 ```python
 print(classification_report_imbalanced(y_test,rf_test_pred))
 ```
-
-                       pre       rec       spe        f1       geo       iba       sup
-
-              0       0.97      0.99      0.67      0.98      0.81      0.68       213
-              1       0.82      0.67      0.99      0.74      0.81      0.64        21
-
-    avg / total       0.95      0.96      0.70      0.96      0.81      0.67       234
-
-
 
 # Conclusion
 

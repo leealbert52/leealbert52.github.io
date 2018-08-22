@@ -1,4 +1,3 @@
-
 ---
 title: "Predicting Device Failure"
 layout: post
@@ -833,7 +832,8 @@ sns.pairplot(result, hue='failure') #due to display issue of Indigo theme. the i
 
 
 ```python
-display(Image(filename='output_19_1.png', embed=True))
+from IPython.display import display, HTML
+display(HTML('''<img src="output_19_1.png'>'''))
 ```
 
 

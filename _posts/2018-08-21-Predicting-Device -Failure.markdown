@@ -835,8 +835,6 @@ sns.pairplot(result, hue='failure') #due to display issue of Indigo theme. the i
 ```
 
 
-![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_20_0.png)
-
 
 # Logistic regression consideration
 
@@ -856,21 +854,12 @@ res=stats.probplot(result['attribute4'], plot=plt)
 ```
 
 
-![png](output_22_0.png)
-
-
-
-![png](output_22_1.png)
-
-
-
 ```python
 display(Image(filename='output_21_0.png', embed=True))
 ```
 
 
-![png](output_23_0.png)
-
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_21_0.png)
 
 
 ```python
@@ -878,25 +867,20 @@ display(Image(filename='output_21_1.png', embed=True))
 ```
 
 
-![png](output_24_0.png)
-
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_21_1.png)
 
 
 ```python
 ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot=500, y_jitter=.03)
 ```
 
-
-![png](output_25_0.png)
-
-
-
 ```python
 display(Image(filename='output_22_0.png', embed=True))
 ```
 
 
-![png](output_26_0.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_22_0.png)
+
 
 
 ## The "S"-shape displayed here indicates that attribute4 is a good candidate to classify failure of a device.  I also tried a log(1 + attribute4) transformation to see if it is normal-like  
@@ -907,23 +891,15 @@ display(Image(filename='output_22_0.png', embed=True))
 result['attribute4'] = np.log1p(result['attribute4'])
 ```
 
-
 ```python
 ax = sns.regplot(x="attribute4", y="failure", data=result, logistic=True, n_boot=500, y_jitter=.03)
 ```
-
-
-![png](output_29_0.png)
-
-
 
 ```python
 display(Image(filename='output_25_0.png', embed=True))
 ```
 
-
-![png](output_30_0.png)
-
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_25_0.png)
 
 
 ```python
@@ -934,20 +910,11 @@ res=stats.probplot(result['attribute4'], plot=plt)
 ```
 
 
-![png](output_31_0.png)
-
-
-
-![png](output_31_1.png)
-
-
-
 ```python
 display(Image(filename='output_26_0.png', embed=True))
 ```
 
-
-![png](output_32_0.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_26_0.png)
 
 
 
@@ -956,7 +923,8 @@ display(Image(filename='output_26_1.png', embed=True))
 ```
 
 
-![png](output_33_0.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_26_1.png)
+
 
 
 One can repeat the exercise for Attibute7
@@ -1002,16 +970,13 @@ sns.jointplot('attribute1', 'attribute6', data=result)
 
 
 
-![png](output_40_1.png)
-
-
-
 ```python
 display(Image(filename='output_33_1.png', embed=True))
 ```
 
 
-![png](output_41_0.png)
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_33_1.png)
+
 
 
 
@@ -1026,18 +991,13 @@ sns.jointplot('attribute4', 'attribute7', data=result)
     <seaborn.axisgrid.JointGrid at 0x118695828>
 
 
-
-
-![png](output_42_1.png)
-
-
-
 ```python
 display(Image(filename='output_34_1.png', embed=True))
 ```
 
+![png](https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_34_1.png)
 
-![png](output_43_0.png)
+
 
 
 # Modeling

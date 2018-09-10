@@ -92,8 +92,7 @@ plt.suptitle('Assume Equal Probability of Winning')
 
 
 
-
-display(Image(filename='output_13_1.png', embed=True))
+div class="center"><img src="https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_13_1.png" /></div>
 
 The chance that a series ends in four games is only $0.125$ or 1 in 8, which is half the probability that the series ends in five games.  And the expected number of games to determine a champion is $E(X) = 4*0.1250 + 5*0.250 + 6*0.3125 + 7*0.3125 = 5.182$ games.  The chance that the series ends in four games is the least likely outcome of the four.
 
@@ -136,8 +135,7 @@ plt.suptitle('Probability of Winning the series for Warriors')
 
 
 
-
-display(Image(filename='output_17_1.png', embed=True))
+  <div class="center"><img src="https://raw.githubusercontent.com/leealbert52/leealbert52.github.io/master/_posts/output_17_1.png" /></div>
 
 ## For Cavaliers to win the series
 

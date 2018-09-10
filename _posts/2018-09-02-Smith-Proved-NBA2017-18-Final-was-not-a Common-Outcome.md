@@ -26,9 +26,9 @@ The National Basketball Association (NBA) 2018-19 season is just around the corn
 
 The outcome was a bit of surprise to many people, to the extent that it was touted as a very competitive match and was widely anticipated a longer series (at least five games).  NBA 2017-18 Final is the second time for these two teams.  The Cavaliers won the championship last time in seven games.  The Golden State Warriors featured Steph Curry and Klay Thompson, et al, whereas the Cavaliers featured LeBron James, Kevin Love, but without Kyrie Irving, who played a significant role in Cavaliers' win against the Warriors last year.
 
-While both teams made it to the final, neither team was top seeded. Golden State Warriors was seeded second in the Western Conference and had to beat Houston Rockets in the Conference final. The Cleveland Cavaliers were seeded fourth in the Eastern Conference and had to beat Boston Celtics to get to the final.  As if this is not eough of a drama, in the final seconds of the regulation in Game 1, the scores were tied. J.R. Smith of the Cavaliers grabbed the rebound and passed the ball out without a shot. The Warriors subsequently beat the Cavaliers in the extra time. That crucial action could turn the series around completely. Had he attempted the shot, Cavaliers could clinch Game 1 and avoided a sweep. 
+While both teams made it to the final, neither team was top seeded. Golden State Warriors was seeded second in the Western Conference and had to beat Houston Rockets in the Conference final. The Cleveland Cavaliers were seeded fourth in the Eastern Conference and had to beat Boston Celtics to get to the final.  As if this is not eough of a drama, in the final seconds of the regulation in Game 1, the scores were tied. J.R. Smith of the Cavaliers grabbed the rebound and passed the ball out without a shot. The Warriors subsequently beat the Cavaliers in the extra time. That crucial action could turn the series around completely. Had he attempted the shot, Cavaliers could clinch Game 1 and avoided a sweep.
 
-If we assume that the chance of winning a game between Warriors and Cavaliers in the final is 50/50. For the series to end in 4 games by either team, the winning team has to win four games in a row and there is only way this can occur. 
+If we assume that the chance of winning a game between Warriors and Cavaliers in the final is 50/50. For the series to end in 4 games by either team, the winning team has to win four games in a row and there is only way this can occur.
 
 
 ```python
@@ -47,7 +47,7 @@ r'$p(X=4) = \binom{3}{3} (0.5)^3 (0.5)^0 (0.5)^1$'
 
 
 ## If the series ends in 4 games
-The probability of winning the series in four games by a team is 
+The probability of winning the series in four games by a team is
 
 $p(X=4) = \binom{3}{3} (0.5)^3 (0.5)^0 (0.5)^1 = 0.0625$
 
@@ -94,8 +94,7 @@ plt.suptitle('Assume Equal Probability of Winning')
 
 
 
-![png](output_13_1.png)
-
+display(Image(filename='output_13_1.png', embed=True))
 
 The chance that a series ends in four games is only $0.125$ or 1 in 8, which is half the probability that the series ends in five games.  And the expected number of games to determine a champion is $E(X) = 4*0.1250 + 5*0.250 + 6*0.3125 + 7*0.3125 = 5.182$ games.  The chance that the series ends in four games is the least likely outcome of the four.
 
@@ -105,7 +104,7 @@ The Golden State Warriors' winning record in the regular season was 54-28 or 0.7
 
 While the season records heading into playoff are different (0.707 vs 0.610; but not significantly different).  Both teams fought through respective conferences and earned their places in the final.  It is quite reasonable to assume that the chance of winning a single game in the final is 50-50 between them.
 
-Based on this assumption, as the calculation above indicated, the chance of deciding a champion in 4 game sereis  is 0.125 or one in eight, which is half of that of finishing in a 5 games series (0.250).  And the expected number of games to determine a champion in a 7-game series is 5.812 games.  Indeed, the outcome is not as common. And throughout the history of NBA finals there were only 8 other sweeps in previous fifty-nine seasons. 
+Based on this assumption, as the calculation above indicated, the chance of deciding a champion in 4 game sereis  is 0.125 or one in eight, which is half of that of finishing in a 5 games series (0.250).  And the expected number of games to determine a champion in a 7-game series is 5.812 games.  Indeed, the outcome is not as common. And throughout the history of NBA finals there were only 8 other sweeps in previous fifty-nine seasons.
 
 However, one may argue that, based on the season record and the fact that Warriors won both games in their meetings Warriors would have a higher percentage of winning a game between them. We can estimate the chance of winning between them. I used (54-28) vs. (50-32) or (52-28) vs. (50-30) to estimate the chance of Warriors winning percentage against Cavaliers in the final. Warriors has about 55% percent higher (1.55 to 1, odds ratio) to win a game or 61% vs 39%.
 
@@ -139,8 +138,7 @@ plt.suptitle('Probability of Winning the series for Warriors')
 
 
 
-![png](output_17_1.png)
-
+display(Image(filename='output_17_1.png', embed=True))
 
 ## For Cavaliers to win the series
 

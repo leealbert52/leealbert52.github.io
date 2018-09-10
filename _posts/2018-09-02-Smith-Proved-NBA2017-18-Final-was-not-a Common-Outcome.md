@@ -1,4 +1,3 @@
-
 ---
 title: "Smith Proved that NBA 2017-18 Final was not a Common Outcome"
 layout: post

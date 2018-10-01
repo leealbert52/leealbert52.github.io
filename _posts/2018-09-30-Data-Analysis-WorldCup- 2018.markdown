@@ -1,4 +1,3 @@
-
 ---
 title: "A Group-Stage Data Analysis of World Cup 2018"
 layout: post
@@ -111,14 +110,14 @@ wc.info
     93     H       Senegal      1       W       3      2
     94     H       Senegal      2       D       1      2
     95     H       Senegal      3       L       0      0
-    
+
     [96 rows x 6 columns]>
 
 
 
 # The Dataset
 
-There are 96 rows of records representing three matches for each of the 32 teams in the group-stage. 
+There are 96 rows of records representing three matches for each of the 32 teams in the group-stage.
 
 # Group-Stage
 
@@ -234,11 +233,11 @@ The p-value of the proportion z-test is 0.011, which is less than 0.05. We rejec
 
 # Knockout-Stage
 
-In the subsequent knockout-stage there is no draw outcome *per se*.  A game can result in a draw before and after the extra time.  We want to compare the chance of a draw in the knockout-stage to the probability of a draw in the group-stage. 
+In the subsequent knockout-stage there is no draw outcome *per se*.  A game can result in a draw before and after the extra time.  We want to compare the chance of a draw in the knockout-stage to the probability of a draw in the group-stage.
 
 The top two teams with highest points within the group advance to the knockout-stage.  Sixteen teams advanced to the knockout-stage.  A total of 8 games was played.  In the knockout-stage if two teams play to a draw in regulation two 15-minutes extra time will be added to determine a winner.  After the extra time if a winner still can't be decided penalty kick will eventually determine a winner.  Of the 8 games played three games resulted in a draw.  The chance of a draw in the knockout-stage is hence estimated to be 3 out of 8 or 0.375.
 
-If we make the same assumption that the chance of a draw in knockout-stage is 1 out of 3 or .333. We can perform a proportion test.  However, the sample size is rather small. 
+If we make the same assumption that the chance of a draw in knockout-stage is 1 out of 3 or .333. We can perform a proportion test.  However, the sample size is rather small.
 
 #this code does not work
 import scipy.stats as stats
@@ -300,11 +299,11 @@ print("oddsR: ", oddsratio, "p-value: ", pvalue)
 
 ## Result_3
 
-The p-value of the odds ratio using Fisher's Exact test is 0.3483. It is not statistically significant at 0.05 level. 
+The p-value of the odds ratio using Fisher's Exact test is 0.3483. It is not statistically significant at 0.05 level.
 
-It is actually more likely that a game ends in a draw during the knockout-stage.  Teams tend to play very cautiously during the knockout-stage, which is often makes for pretty low scoring games as teams know they have extra time available and, in worst case scenario, using penalty kicks to advance. 
+It is actually more likely that a game ends in a draw during the knockout-stage.  Teams tend to play very cautiously during the knockout-stage, which is often makes for pretty low scoring games as teams know they have extra time available and, in worst case scenario, using penalty kicks to advance.
 
-As far as strategy goes, stronger teams should always play to get a win in group-stage and weaker teams should always play to avoid a loss.  Once the weaker teams make it out of the group-stage a strategy to help them to get to the semifinal would be to play to a draw and force a penalty kick - the World Cup 2018 data seem to support this argument - it is more likely to play to a draw in the knockout-stage than in the group-stage. 
+As far as strategy goes, stronger teams should always play to get a win in group-stage and weaker teams should always play to avoid a loss.  Once the weaker teams make it out of the group-stage a strategy to help them to get to the semifinal would be to play to a draw and force a penalty kick - the World Cup 2018 data seem to support this argument - it is more likely to play to a draw in the knockout-stage than in the group-stage.
 
 # Can a team advance to knockout-stage with 3 Draws
 
@@ -858,26 +857,26 @@ plt.bar(empirical3['Points'],empirical3['Probability'])
 ![png](output_49_1.png)
 
 
-As you can see from the two graphs: using 2-point system the graph is symmetric. So the mean and median are the same at 3 points. A team with 3 points in 2-point system can be three draws or one win, one draw and one loss and still qualify for knockout-stage. In World Cup 2018 there was no team with three draws.  Japan and Senegal are the only two teams with the same recod of a win, a draw and a loss. Japan eventually advanced using one of rarely used tie-breaker. 
+As you can see from the two graphs: using 2-point system the graph is symmetric. So the mean and median are the same at 3 points. A team with 3 points in 2-point system can be three draws or one win, one draw and one loss and still qualify for knockout-stage. In World Cup 2018 there was no team with three draws.  Japan and Senegal are the only two teams with the same recod of a win, a draw and a loss. Japan eventually advanced using one of rarely used tie-breaker.
 
-Using 3-point system the distribution is skewed to the right.  However, the mean and the median happen to be the same at 4 points.  A team with three draws in the 3-point system will not qualify.  In order to qualify in the 3-point you have to have a win and at least one draw like that of Japan and Senegal in World Cup 2018. Even with 4 points like Senegal, advancing is not guaranteed, either. 
+Using 3-point system the distribution is skewed to the right.  However, the mean and the median happen to be the same at 4 points.  A team with three draws in the 3-point system will not qualify.  In order to qualify in the 3-point you have to have a win and at least one draw like that of Japan and Senegal in World Cup 2018. Even with 4 points like Senegal, advancing is not guaranteed, either.
 
 # Conclusion
 
 World Cup 2018 has many dramatic moments. Few, if any, expected Russia, the hosting country, to advance to the  knockout-stage.  Not only did Russia made it to the round of 16, but also beat the soccer powerhouse Spain in a penalty kick, only to lose to Croatia in the penalty kick (3-4).
 
-Germany, the reigning world cup champion in 2014, did not make it out of the group-stage; Soccer powerhouses Spain (2010 World Cup champion), Portugal, Argentina were all eliminated before the quarter-finals. Brazil, favored to win it all before the tournament, lost to Belgium in the quarter-final; 
+Germany, the reigning world cup champion in 2014, did not make it out of the group-stage; Soccer powerhouses Spain (2010 World Cup champion), Portugal, Argentina were all eliminated before the quarter-finals. Brazil, favored to win it all before the tournament, lost to Belgium in the quarter-final;
 
 England blew away Panama (6-1) on Match Day 2. An investment banking company, Goldman Sachs, has used a machine learning algorithm to predict England will reach the World Cup final. The algorithm simulated a million variations to pick a winner ahead of the tournament. The pre-tournament forecasted a final between Germany and Brazil.
 
-After Match Day 2 Goldman Sachs now predicts that England will meet Brazil in the final. It was not the case at all, as England was beaten by Croatia in the semi-final. 
+After Match Day 2 Goldman Sachs now predicts that England will meet Brazil in the final. It was not the case at all, as England was beaten by Croatia in the semi-final.
 
 Japan and Senegal ended up with the same record and a rarely used tie-breaker was applied to advance Japan to the knockout-stage; only to lose to Belgium, who came from 2 goals behind in the final minutes of regulation;
 
 Denmark was the only team with back-to-back draw and it occurred on the Match Day 2 and 3. There was no team with three draws in group-stage.
 
-Croatia, ranked 20th in the FIFA World, was one of three teams with three wins in the group-stage (Uruguay and Belgium are the other two countries); Croatia also had to play three consecutive extra time games: beat Denmark in penalty kick (3-2) in the round of 16; beat Russia in penalty kick (4-3) in the quarter-final and beat England in extra time 2-1, to get to the final to face France. 
+Croatia, ranked 20th in the FIFA World, was one of three teams with three wins in the group-stage (Uruguay and Belgium are the other two countries); Croatia also had to play three consecutive extra time games: beat Denmark in penalty kick (3-2) in the round of 16; beat Russia in penalty kick (4-3) in the quarter-final and beat England in extra time 2-1, to get to the final to face France.
 
 Twenty of the 32 teams appeared in World Cup 2014, France was one of them.  France, ranked 7th in the FIFA World, won 2 games and a draw with a total of 7 points in the group-stage; they shut out Uruguay 2-0 in the quarter-final and beat Belgium 1-0 in the semi-final and win it all by beating Croatia 4-2 in the final.
 
-The chance of three draws in group-stage is very rare.  Under the 3-point system a team with three draws will not qualify for knockout-stage. To qualify you have to have at least one win and no loss. Under the 2-point system three points are right at the median. A team with three draws could advance to the knockout-stage in 2-point system.  Maybe this is the reason that FIFA implemented the 3-point system long time ago. 
+The chance of three draws in group-stage is very rare.  Under the 3-point system a team with three draws will not qualify for knockout-stage. To qualify you have to have at least one win and no loss. Under the 2-point system three points are right at the median. A team with three draws could advance to the knockout-stage in 2-point system.  Maybe this is the reason that FIFA implemented the 3-point system long time ago.
